@@ -31,11 +31,11 @@ def breathe_out(color, duration, steps=100):
 
 # 主循环
 while True:
-    breathe_in((255, 0, 0), 2)  # 红色逐渐变亮，周期3秒
-    breathe_out((255, 0, 0), 2) # 红色逐渐变暗，周期3秒
+    breathe_in((255, 0, 0), 2)  # 红色逐渐变亮，周期2秒
+    breathe_out((255, 0, 0), 2) # 红色逐渐变暗，周期2秒
 
-    breathe_in((0, 255, 0), 2)  # 绿色逐渐变亮，周期3秒
-    breathe_out((0, 255, 0), 2) # 绿色逐渐变暗，周期3秒
+    breathe_in((0, 255, 0), 2)  # 绿色逐渐变亮，周期2秒
+    breathe_out((0, 255, 0), 2) # 绿色逐渐变暗，周期2秒
 
-    breathe_in((0, 0, 255), 2)  # 蓝色逐渐变亮，周期3秒
-    breathe_out((0, 0, 255), 2) # 蓝色逐渐变暗，周期3秒
+    breathe_in((0, 0, 255), 2)  # 蓝色逐渐变亮，周期2秒
+    breathe_out((0, 0, 255), 2) # 蓝色逐渐变暗，周期2秒
