@@ -2,8 +2,8 @@ import network
 import time
 
 # WiFi网络名称和密码
-target_ssid = 'makerbaby'
-password = 'makerbaby2017'
+target_ssid = 'WIFI_NAME'
+password = 'WIFI_PASSWD'
 
 # 初始化WiFi模块
 wlan = network.WLAN(network.STA_IF)
