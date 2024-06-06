@@ -3,8 +3,8 @@ import time
 import ntptime
 
 
-SSID = 'makerbaby'
-PASSWORD = 'makerbaby2017'
+SSID = 'WIFI_NAME'
+PASSWORD = 'WIFI_PASSWD'
 
 def connect_wifi(ssid, password):
     wlan = network.WLAN(network.STA_IF)
