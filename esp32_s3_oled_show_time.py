@@ -5,8 +5,8 @@ from machine import Pin, I2C
 import ssd1306
 
 # 配置WiFi连接
-SSID = 'makerbaby'
-PASSWORD = 'makerbaby2017'
+SSID = 'WIFI_NAME'
+PASSWORD = 'WIFI_PASSWD'
 
 # 初始化I2C和OLED
 i2c = I2C(0, scl=Pin(6), sda=Pin(7))
