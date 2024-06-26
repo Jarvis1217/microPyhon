@@ -60,8 +60,8 @@ while True:
     roll, pitch = mpu.get_angle()
 
     # 计算小球在X和Y方向的加速度
-    acc_x = g * pitch
-    acc_y = g * roll
+    acc_x = g * roll
+    acc_y = g * pitch
 
     # 更新小球的速度
     speed_x += acc_x * dt
