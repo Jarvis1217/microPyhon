@@ -2,6 +2,7 @@
 from micropython import const
 import ustruct
 import time
+import math
 
 # MPU6050 registers
 MPU6050_ADDRESS = const(0x68)
@@ -64,11 +65,19 @@ class MPU6050:
     def temperature(self):
         temp = self._read_word(TEMP_OUT_H)
         return temp / 340.0 + 36.53
-"""
+    
+    def get_angle(self):
+        accel_data = self.accel
+        x = accel_data[0]
+        y = accel_data[1]
+        z = accel_data[2]
+        roll = math.atan2(-x, math.sqrt(y * y + z * z)) * 57.2958
+        pitch = math.atan2(y, z) * 57.2958
+        return roll, pitch
+    
+'''
 from machine import I2C, Pin
 from mpu6050 import MPU6050
-import time
-import math
 
 # 初始化I2C
 i2c = I2C(1, scl=Pin(6), sda=Pin(7))
@@ -76,20 +85,7 @@ i2c = I2C(1, scl=Pin(6), sda=Pin(7))
 # 初始化MPU6050传感器
 mpu = MPU6050(i2c)
 
-# 定义一个函数计算角度
-def calculate_angle(accel_data):
-    x = accel_data[0]
-    y = accel_data[1]
-    z = accel_data[2]
-    roll = math.atan2(y, z) * 57.2958
-    pitch = math.atan2(-x, math.sqrt(y * y + z * z)) * 57.2958
-    return roll, pitch
-
-# 主循环，读取传感器数据并计算角度
 while True:
-    accel_data = mpu.accel
-    gyro_data = mpu.gyro
-    roll, pitch = calculate_angle(accel_data)
+    roll, pitch = MPU6050.get_angle()
     print("Roll: {:.2f}, Pitch: {:.2f}".format(roll, pitch))
-
-"""
+'''
