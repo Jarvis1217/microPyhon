@@ -56,14 +56,14 @@ while True:
     response = 'stop'
    
     if pitch < -45:
-        response = 'left'
+        response = 'down'
     elif pitch > 45:
-        response = 'right'
+        response = 'up'
         
     if roll  < -45:
-        response = 'down'
+        response = 'left'
     elif roll > 45:
-        response = 'up'
+        response = 'right'
     
     try:
         udp_socket.sendto(response.encode(), ('192.168.4.2',12345))
