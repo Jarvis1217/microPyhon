@@ -32,8 +32,8 @@ def draw_cross_and_point(oled, roll, pitch):
     oled.hline(0, oled_height // 2, oled_width, 1)
     oled.vline(oled_width // 2, 0, oled_height, 1)
     # 根据roll和pitch计算小白点的位置
-    x = oled_width // 2 + int(pitch)
-    y = oled_height // 2 + int(roll)
+    x = oled_width // 2 + int(roll)
+    y = oled_height // 2 + int(pitch)
     # 确保小白点在屏幕范围内
     x = max(0, min(oled_width - 1, x))
     y = max(0, min(oled_height - 1, y))
