@@ -86,6 +86,6 @@ i2c = I2C(1, scl=Pin(6), sda=Pin(7))
 mpu = MPU6050(i2c)
 
 while True:
-    roll, pitch = MPU6050.get_angle()
+    roll, pitch = mpu.get_angle()
     print("Roll: {:.2f}, Pitch: {:.2f}".format(roll, pitch))
 '''
