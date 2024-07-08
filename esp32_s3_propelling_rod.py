@@ -82,7 +82,7 @@ def on_select_button_pressed(pin):
             draw_ready_frame()
         elif mod == 11:
             gas_pedal.duty(0)
-            braker.value(1)
+            braker.value(0)
         while pin.value() == 1:
             sleep(0.01)  # 等待按钮释放
             n += 1
