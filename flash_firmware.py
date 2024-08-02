@@ -9,8 +9,7 @@ def get_connected_ports():
 def execute_commands(port):
     commands = [
         f'esptool --chip esp32c3 --port {port} erase_flash',
-        f'esptool --chip esp32c3 --port {port} --baud 460800 write_flash -z 0x0 C:\\Users\\lenovo\\Desktop\\c3_mini.bin',
-        f'ampy --port {port} put mpu6050.py',
+        f'esptool --chip esp32c3 --port {port} --baud 460800 write_flash -z 0x0 {path}',
         f'ampy --port {port} put main.py'
     ]
     
