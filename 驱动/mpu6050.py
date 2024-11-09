@@ -56,9 +56,9 @@ class MPU6050:
     @property
     def gyro(self):
         self._read(GYRO_XOUT_H)
-        gyro_x = ustruct.unpack('>h', self.buf[8:10])[0]
-        gyro_y = ustruct.unpack('>h', self.buf[10:12])[0]
-        gyro_z = ustruct.unpack('>h', self.buf[12:14])[0]
+        gyro_x = ustruct.unpack('>h', self.buf[0:2])[0]
+        gyro_y = ustruct.unpack('>h', self.buf[2:4])[0]
+        gyro_z = ustruct.unpack('>h', self.buf[4:6])[0]
         return gyro_x, gyro_y, gyro_z
 
     @property
